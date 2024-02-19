@@ -1,8 +1,18 @@
 <?php
-
 //Array
 $books = ["Book__1", "Book__2", "Book__3"];
 
+$post = ["title" => "post1", "author" => "author of the post"];
+
+$confiremd = false;
+
+if (!$confiremd) {
+    # code...
+    echo "This appointment has not yet been confirmed";
+}
+;
+
+echo $post["title"];
 // Assoicative Array
 
 $booksData = [
@@ -67,4 +77,4 @@ $filterdBooksBuiltin = array_filter($booksData, function ($book) {
     return $book["Author"] === "unknown";
 });
 
-require "./index.view.php";
+require "./views/index.view.php";

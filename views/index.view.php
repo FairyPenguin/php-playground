@@ -10,13 +10,22 @@ align-items:center;
 height:100vh;
 flex-direction:column;
 }
+
+li{
+	list-style:none;
+	font-size: 1.9rem;
+}
+
+ul{
+	display:flex;
+	gap:1rem
+}
 </style>
 </head>
 <body>
 
-
-
 <?php
+
 // echo "<h2>PHP is Fun!</h2>";
 // echo "Hello world!<br>";
 // echo "This is just text with echo no HTM<br>";
@@ -53,6 +62,8 @@ flex-direction:column;
  */
 ?>
 
+<?php require "./views/partials/nav.php"?>
+
 
 
 <ul>
@@ -72,9 +83,8 @@ flex-direction:column;
 
 
 <div>
-<?=$name
-// <!-- Syntax Sugar for echo -->
-?>
+<?=$name?>
+ <!-- Syntax Sugar for echo -->
 </div>
 
 <h3><?=$books[0]?></h3>
@@ -105,7 +115,7 @@ flex-direction:column;
 
 	<?php foreach ($filterdBooksBuiltin as $book): ?>
 
-  
+
 
 		<li>
         <?=$book["id"]?>
@@ -116,5 +126,8 @@ flex-direction:column;
 		<?php endforeach;?>
 </ul>
 
+
+
 </body>
 </html>
+
