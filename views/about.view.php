@@ -7,21 +7,16 @@
 </head>
 <body>
 <h1>About Kido</h1>
-<?="Hello World"?>
 
-<?php echo "Agian Echoing" ?>
 
-<?php require "./views/partials/vars.php";?>
+<!-- <?php require "./views/partials/vars.php";?> -->
 <?php require "./views/partials/nav.php";?>
-<?php
+<!-- <?php
 require "./views/components/c1.php"
-?>
+?> -->
 
 
 
-<p>About</p>
-
-<h2>The partial above</h2>
 </body>
 
 </html>

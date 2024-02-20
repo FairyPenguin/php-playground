@@ -1,80 +1,57 @@
 <?php
-//Array
-$books = ["Book__1", "Book__2", "Book__3"];
 
-$post = ["title" => "post1", "author" => "author of the post"];
+require "./functions.php";
 
-$confiremd = false;
+require "./router.php";
 
-if (!$confiremd) {
+class Person
+{
+    public $name;
+    public $age;
+
+    public function toDo()
+    {
+        echo "todo list of" . " " . $this->name;
+    }
+};
+
+$person = new Person();
+
+$person->name = "Mahmoud";
+$person->age = 24;
+
+// dd($person);
+// dd($person->name);
+// dd($person->toDo());
+
+$query = "SELECT * FROM post";
+$dbFile = "./db/php.db";
+
+if (file_exists($dbFile)) {
     # code...
-    echo "This appointment has not yet been confirmed";
+    echo "YESSSSS Exists";
 }
 ;
 
-echo $post["title"];
-// Assoicative Array
+$db = new PDO("sqlite:$dbFile");
 
-$booksData = [
-    [
-        "id" => 3, "name" => "BOOK_1", "Author" => "unknown",
-    ], [
-        "id" => 4, "name" => "BOOK_2", "Author" => "unknown",
-    ],
-    [
-        "id" => 5, "name" => "BOOK_3", "Author" => "unknown2",
-    ],
-    [
-        "id" => 1, "name" => "BOOK_4", "Author" => "unknown2",
-    ],
-    [
-        "id" => 2, "name" => "BOOK_5", "Author" => "unknown3",
-    ],
-    [
-        "id" => 3, "name" => "BOOK_6", "Author" => "unknown3",
-    ],
-];
+// foreach ($db->query($query) as $row) {
+//     echo "<br>" . $row["title"];
+//     // echo $row[1];
+// }
 
-function filter($itemsArray, $fn)
-{
-    $filteredBooks = [];
+$statement = $db->prepare("select * from post");
 
-    foreach ($itemsArray as $item) {
-        # code...
-        if ($fn($item)) {
-            # code...
-            $filteredBooks[] = $item;
-        }
+$statement->execute();
 
-    }
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    return $filteredBooks;
+foreach ($posts as $post) {
+    # code...
+    echo "<li>" . $post["id"] . "</li>";
+    echo "<li>" . $post["title"] . "</li>";
 }
 
-//Anonymous Function == Lambda Function
-$filterByBook = function ($booksArray, $author) {
-    $filteredBooks = [];
+// dd($posts);
 
-    foreach ($booksArray as $book) {
-        # code...
-        if ($book["Author"] === $author) {
-            # code...
-            $filteredBooks[] = $book;
-        }
-
-    }
-
-    return $filteredBooks;
-};
-
-$filteredBooks = filter($booksData, function ($book) {
-
-    return $book["Author"] === "unknown";
-
-});
-
-$filterdBooksBuiltin = array_filter($booksData, function ($book) {
-    return $book["Author"] === "unknown";
-});
-
-require "./views/index.view.php";
+// phpinfo();

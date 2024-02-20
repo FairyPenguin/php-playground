@@ -7,8 +7,10 @@
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+/* height:100%; */
 flex-direction:column;
+margin-top: 2rem;
+padding-top: 2rem;
 }
 
 li{
@@ -20,10 +22,23 @@ ul{
 	display:flex;
 	gap:1rem
 }
+
+
+.current{
+font-weight: bold;
+color:darkgreen
+}
+
+.link{
+	list-style: none;
+	color:black
+}
+
 </style>
 </head>
 <body>
-
+<br/>
+<br/>
 <?php
 
 // echo "<h2>PHP is Fun!</h2>";
@@ -60,13 +75,26 @@ ul{
 /**
  * Named Function
  */
+
+// echo "<pre>";
+
+// var_dump($_SERVER);
+
+// echo "</pre>";
+
+// die();
+
+// var_dump(["string", "number"]);
+
 ?>
+
 
 <?php require "./views/partials/nav.php"?>
 
 
 
-<ul>
+
+<!-- <ul>
 <?php foreach ($booksData as $book): ?>
 
 <?php if ($book["Author"] === "unknown"): ?>
@@ -78,7 +106,7 @@ ul{
 <?php endif?>
 
 <?php endforeach;?>
-</ul>
+</ul> -->
 
 
 
@@ -87,28 +115,28 @@ ul{
  <!-- Syntax Sugar for echo -->
 </div>
 
-<h3><?=$books[0]?></h3>
+<!-- <h3><?=$books[0]?></h3>
 <h3><?=$books[1]?></h3>
-<h3><?=$books[2]?></h3>
+<h3><?=$books[2]?></h3> -->
 
-<ul>
+<!-- <ul>
 <?php foreach ($books as $book) {
     echo "<li>{$book} from books list</li>";
     echo "<li>" . $book . "</li>";
 }
 ;?>
-</ul>
+</ul> -->
 
 
 
-<ul>
+<!-- <ul>
 <?php foreach ($books as $book): ?>
 
 	<li><?php echo $book ?></li>
 	<li><?=$book?></li>
 
 <?php endforeach;?>
-</ul>
+</ul> -->
 
 
 <ul>

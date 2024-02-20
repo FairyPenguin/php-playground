@@ -7,11 +7,12 @@
 </head>
 <body>
 
+<h1>Call me Kido</h1>
+
 <?php
 require "./views/partials/nav.php"
 ?>
 
 
-<h1>Call me Kido</h1>
 </body>
 </html>
