@@ -4,6 +4,8 @@ require "./functions.php";
 
 require "./router.php";
 
+require "./Databse.php";
+
 class Person
 {
     public $name;
@@ -24,27 +26,22 @@ $person->age = 24;
 // dd($person->name);
 // dd($person->toDo());
 
-$query = "SELECT * FROM post";
-$dbFile = "./db/php.db";
-
 if (file_exists($dbFile)) {
     # code...
     echo "YESSSSS Exists";
 }
 ;
 
-$db = new PDO("sqlite:$dbFile");
-
 // foreach ($db->query($query) as $row) {
 //     echo "<br>" . $row["title"];
 //     // echo $row[1];
 // }
 
-$statement = $db->prepare("select * from post");
+$config = require "../ele/config.php";
 
-$statement->execute();
+$db = new Database($config["filePath"]);
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+$posts = $db->query("select * from post")->fetchAll();
 
 foreach ($posts as $post) {
     # code...
