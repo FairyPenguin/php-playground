@@ -43,6 +43,11 @@ color:darkgreen
 				class="<?=urlCheck("/contact") ? "current" : "link"?>"
 				href="/contact">Contact</a>
 			</li>
+					<li>
+				<a
+				class="<?=urlCheck("/notes") ? "current" : "link"?>"
+				href="/notes">notes</a>
+			</li>
 		</ul>
 	</nav>
 </header>

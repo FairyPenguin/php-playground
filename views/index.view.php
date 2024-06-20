@@ -3,14 +3,16 @@
 <head>
 <title>Document</title>
 <style>
-	body{
-display:flex;
-justify-content:center;
-align-items:center;
-/* height:100%; */
-flex-direction:column;
-margin-top: 2rem;
-padding-top: 2rem;
+
+body{
+  	font-family: Verdana, sans-serif;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	/* height:100%; */
+	flex-direction:column;
+	margin-top: 1rem;
+	padding-top: 1rem;
 }
 
 li{
@@ -111,7 +113,6 @@ color:darkgreen
 
 
 <div>
-<?=$name?>
  <!-- Syntax Sugar for echo -->
 </div>
 
@@ -121,8 +122,8 @@ color:darkgreen
 
 <!-- <ul>
 <?php foreach ($books as $book) {
-    echo "<li>{$book} from books list</li>";
-    echo "<li>" . $book . "</li>";
+	echo "<li>{$book} from books list</li>";
+	echo "<li>" . $book . "</li>";
 }
 ;?>
 </ul> -->
@@ -141,17 +142,6 @@ color:darkgreen
 
 <ul>
 
-	<?php foreach ($filterdBooksBuiltin as $book): ?>
-
-
-
-		<li>
-        <?=$book["id"]?>
-            <?=$book["name"]?>
-		<?=$book["Author"]?>
-		<a href="<?=$book["name"]?>"><?=$book["name"]?></a>
-    </li>
-		<?php endforeach;?>
 </ul>
 
 

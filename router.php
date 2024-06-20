@@ -16,30 +16,30 @@ $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 $routes = [
 
-    "/" => "./controllers/index.php",
-    "/about" => "./controllers/about.php",
-    "/contact" => "./controllers/contact.php",
+	"/" => "./controllers/index.php",
+	"/about" => "./controllers/about.php",
+	"/contact" => "./controllers/contact.php",
+	"/notes" => "./controllers/notes.php",
+	"/note" => "./controllers/note.php",
 
 ];
 
-function routeToController($uri, $routes)
-{
-    if (array_key_exists($uri, $routes)) {
-        # code...
-        require $routes[$uri];
+function routeToController($uri, $routes) {
+	if (array_key_exists($uri, $routes)) {
+		# code...
+		require $routes[$uri];
 
-    } else {
-        abort();
-    }
+	} else {
+		abort();
+	}
 }
 
-function abort($status_code = 404)
-{
-    http_response_code($status_code);
+function abort($status_code = 404) {
+	http_response_code($status_code);
 
-    require "./views/{$status_code}.php";
+	require "./views/{$status_code}.php";
 
-    die();
+	die();
 };
 
 routeToController($uri, $routes);

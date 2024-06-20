@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-
-<h1>Call me Kido</h1>
+<h1>000</h1>
 
 <?php
 require "./views/partials/nav.php"

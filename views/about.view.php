@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<style type="text/css">
+    body{
+    font-family: Verdana, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* height:100%; */
+    flex-direction:column;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+</style>
+
 <body>
-<h1>About Kido</h1>
 
 
 <!-- <?php require "./views/partials/vars.php";?> -->
