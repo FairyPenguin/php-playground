@@ -10,11 +10,11 @@ $config = require "../ele/config.php";
 
 $db = new Database($config["filePath"]);
 
-$id = $_GET["id"];
+// $id = $_GET["id"];
 
 $query = "select * from posts where id = :id";
 
-$posts = $db->query($query, [$id])->fetch();
+// $posts = $db->query($query, [$id])->fetch();
 
 // foreach ($posts as $post) {
 // 	# code...

@@ -38,9 +38,7 @@ require "./views/partials/nav.php"
 
 
 
-<?php foreach ($variable as $key => $value): ?>
 
-<?php endforeach?>
 
 
 
