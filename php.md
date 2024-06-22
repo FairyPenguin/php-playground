@@ -4,6 +4,10 @@
 
 `var_dump(get_included_files());`
 
+`json_encode() => convert any response to josn values formatting`
+
+`json_decode() => convert json data to associative array`
+
 ```php
 	
 	var_dump() === **console.log() && typeOf** so 
@@ -14,8 +18,106 @@
 
 ```
 
+to fix the undefined vars problem use `isset($_GET[""])` with if
+
+```php
+	
+	if(isset($_GET['variable'])){
+	echo "string";
+	return ....
+	}
+
+```
+
+-------
+
+**Error Handling**
+
+Simply use `try/catch` like js 
+
+```php
+
+	try {
+		
+	} catch (Exception $e) {
+		echo $e=>getMessage();
+	}
+
+```
+
+-------
+
+ **Constants**
+
+```php
+	
+	define(name, value) === const name = value in js
+
+	echo name
+
+```
+
+**Operators** 
+
+Same as js 
+
+```php
+ 
+ > < >= <= == === != !===
+
+```
+
 -----
 
+**Loops**
+
+1. for - while - do while
+
+2. foreach() => for Arrays
+
+```php
+
+	$books = ["Book__1", "Book__2", "Book__3"];
+
+
+	foreach ($books as $book ) {
+			// code...
+		echo "Book => ${book} ";
+		}	
+
+	// This version shows the index 0 1 2 3 4 5 6
+
+	foreach ($books as $index => $book) {
+		// code...
+		echo "Index: ${key} Book => ${book} ";
+	}
+
+		// This version shows the keys for assoc_array
+
+	foreach ($books as $key => $book) {
+		// code...
+		echo "Index: ${key} Book => ${book} ";
+	}
+
+	array_map() === .map() in JS
+
+		$mapMethod = array_map(function ($book) {
+		return "Book Mapped to ${book}";
+	}, $books);
+
+	print_r($mapMethod);
+
+	array_filter($array, function(){}) === .filter() in js
+
+	array_reduce(input, function) === .reduce() in js
+
+
+```
+
+3. 
+
+
+-----
 
 ## Data Types
 
@@ -27,6 +129,10 @@
 6. Resource
 7. Array && Assoicated Arrays {JS Objects but with => instead of : between keys and values}
 
+
+**Arrays**
+
+$numbersArray = [1,2,3,4,5,6]
 
 -----
 
@@ -161,3 +267,62 @@ The :: operator is used for static methods/properties or when you want to access
 ```
 
 ---
+
+
+The error in the provided PHP code is a syntax error caused by a typo in the catch block. The arrow operator (`=>`) is used for array key-value pairs or object property access, but in this case, it is being used incorrectly.
+
+Here's the corrected version of the code:
+
+```php
+try {
+    echo "string";
+} catch (Exception $e) {
+    echo 'Error:', $e->getMessage();
+}
+```
+
+In the catch block, the correct syntax to access the exception message is to use the arrow operator (`->`) instead of the arrow (`=>`). By replacing `=>` with `->`, you can access the `getMessage()` method of the `$e` object to retrieve the error message of the exception.
+
+
+Certainly! In PHP, the arrow operator (`->`) and the double arrow operator (`=>`) have different purposes when it comes to accessing object properties and array elements.
+
+1. Arrow Operator (`->`):
+   - The arrow operator is used to access properties and methods of an object.
+   - It is used after an object instance to reference its properties or invoke its methods.
+   - The syntax is `$object->property` to access a property or `$object->method()` to call a method.
+
+   For example:
+   ```php
+   class MyClass {
+       public $property = 'value';
+
+       public function method() {
+           echo 'Hello, world!';
+       }
+   }
+
+   $obj = new MyClass();
+   echo $obj->property;  // Output: value
+   $obj->method();       // Output: Hello, world!
+   ```
+
+2. Double Arrow Operator (`=>`):
+   - The double arrow operator is used in array literals or when working with associative arrays.
+   - It is used to associate a key with a value in an array.
+   - The syntax is `['key' => 'value']` to define an element in an associative array.
+
+   For example:
+   ```php
+   $array = [
+       'key1' => 'value1',
+       'key2' => 'value2',
+       'key3' => 'value3'
+   ];
+
+   echo $array['key2'];  // Output: value2
+   ```
+
+   The double arrow operator is used to define the relationship between keys and values in associative arrays. It is not used for accessing properties or methods of objects.
+
+In summary, the arrow operator (`->`) is used to access properties and methods of objects, while the double arrow operator (`=>`) is used to define key-value pairs in arrays, particularly associative arrays.
+-----
