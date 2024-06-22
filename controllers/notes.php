@@ -6,8 +6,8 @@ $db = new Database($config["filePath"]);
 
 $query = "select * from notes";
 
-$notes = $db->query($query, [])->fetchAll();
+$notes = $db->query($query, [])->findAllOrAbort();
 
-// dd($notes);
+dd($notes);
 
 require "./views/notes.view.php";

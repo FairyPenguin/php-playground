@@ -3,6 +3,8 @@ class Database {
 
 	// connection property
 	public $connection;
+	// statement property
+	public $statement;
 
 	// __constructer
 	public function __construct($filePath) {
@@ -16,13 +18,47 @@ class Database {
 	// Function Query
 	public function query($query, $params = []) {
 
-		$statement = $this->connection->prepare($query);
+		$this->statement = $this->connection->prepare($query);
 
 // the query params passed as parameter to protect against SQL injection
-		$statement->execute($params);
+		$this->statement->execute($params);
 
-		return $statement;
-		// ->fetchAll(PDO::FETCH_ASSOC);
+		return $this;
+	}
+
+	public function find() {
+
+		return $this->statement->fetch();
 
 	}
+
+	public function findAll() {
+
+		return $this->statement->fetchAll();
+	}
+
+	public function findAllOrAbort() {
+
+		$result = $this->findAll();
+
+		if (!$result) {
+			// code...
+			abort();
+		};
+
+		return $result;
+	}
+
+	public function findOrAbort() {
+
+		$result = $this->find();
+		if (!$result) {
+			// code...
+			abort();
+		}
+
+		return $result;
+	}
+
+	//Class End ---------|
 }

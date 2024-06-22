@@ -25,8 +25,6 @@ require "./views/partials/nav.php"
 <br>
 <?php foreach ($notes as $note): ?>
   <!-- // code... -->
-
-
 <li>
     <a href="/note?id=<?=$note["id"]?>">
     <?=$note["body"]?>

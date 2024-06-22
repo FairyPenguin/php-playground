@@ -67,6 +67,36 @@ Same as js
 
 ```
 
+----- 
+**OOP**
+
+classes contains
+1. construct method
+2. properties
+
+```php
+	
+	Class ClassName{
+
+		//Start everthign in private visiblity and then change.
+		public $prop1;
+		public $prop2;
+
+		public function __construct($arg1,$arg2){
+
+			$this->prop1 = $arg1;
+			$this->prop2 = $arg2
+
+		}
+	}
+
+
+	$objectFromTheClass = new ClassName();
+
+	$objectFromTheClass->
+
+```
+
 -----
 
 **Loops**
@@ -326,3 +356,6 @@ Certainly! In PHP, the arrow operator (`->`) and the double arrow operator (`=>`
 
 In summary, the arrow operator (`->`) is used to access properties and methods of objects, while the double arrow operator (`=>`) is used to define key-value pairs in arrays, particularly associative arrays.
 -----
+
+
+

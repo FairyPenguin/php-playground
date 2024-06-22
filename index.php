@@ -1,9 +1,8 @@
 <?php
 
 require "./functions.php";
-
 require "./Databse.php";
-
+require "./ResponseCodes.php";
 require "./router.php";
 
 $config = require "../ele/config.php";

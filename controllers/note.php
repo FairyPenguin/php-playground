@@ -6,16 +6,20 @@ $db = new Database($config["filePath"]);
 
 $id = $_GET['id'];
 
-$query = "select * from notes where user_id = :userId and id = :id";
+// $query = "select * from notes where user_id = :userId and id = :id";
 
-$note = $db->query($query, ["id" => $id, "userId" => 2])->fetch();
+$query = "select * from notes where id = :id";
 
-if (! $note) {
+$note = $db->query($query, ["id" => $id])->fetch();
+
+// print_r($note);
+
+$currentUserId = 2;
+
+if ($note["user_id"] !== $currentUserId) {
 	// code...
-	abort()
+	abort(ResponseCode::Unauthorized);
 }
-
-// dd($notes);
 
 require "./views/note.view.php";
 
