@@ -1,34 +1,47 @@
 <?php
 
-function dd($value) {
+function dd($value)
+{
 
-	echo "<pre>";
+    echo "<pre>";
 
-	var_dump($value);
+    var_dump($value);
 
-	echo "</pre>";
+    echo "</pre>";
 
-	die();
+    die();
 
 };
+
+function authorize($condition, $statusCode = ResponseCode::Unauthorized)
+{
+
+    if (!$condition) {
+        // code...
+        abort(ResponseCode::Unauthorized);
+    }
+}
 
 function newLineBreak(
-	$value = "ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ") {
-	echo "<br>";
-	// ------------New Line------------
-	echo $value;
-	// ------------New Line------------
-	echo "<br>";
+    $value = "ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ"
+) {
+    echo "<br>";
+    // ------------New Line------------
+    echo $value;
+    // ------------New Line------------
+    echo "<br>";
 };
 
-function printPlus($value) {
+function printPlus($value)
+{
 
-	echo "${value}";
+    echo "${value}";
 
 }
 
-function urlCheck($value) {
+function urlCheck($value)
+{
 
-	return $_SERVER["REQUEST_URI"] === $value;
+    return $_SERVER["REQUEST_URI"] === $value;
 
 };

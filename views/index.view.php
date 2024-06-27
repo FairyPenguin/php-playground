@@ -122,8 +122,8 @@ color:darkgreen
 
 <!-- <ul>
 <?php foreach ($books as $book) {
-	echo "<li>{$book} from books list</li>";
-	echo "<li>" . $book . "</li>";
+    echo "<li>{$book} from books list</li>";
+    echo "<li>" . $book . "</li>";
 }
 ;?>
 </ul> -->

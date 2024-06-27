@@ -212,6 +212,12 @@ Example:
 
 ```
 
+**Static methods** are pure functions that doesn't depends on outsider value or (state like $this->)
+
+when you need to use static method no need to instantiating a new Class you directly call the function name from the class's
+
+Class::StaticMethod
+
 ----
 
 **Let's clarify the ways to access array elements in PHP:**

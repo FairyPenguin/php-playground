@@ -1,6 +1,6 @@
 <?php
-class Database {
 
+class Database {
 	// connection property
 	public $connection;
 	// statement property
@@ -20,7 +20,7 @@ class Database {
 
 		$this->statement = $this->connection->prepare($query);
 
-// the query params passed as parameter to protect against SQL injection
+		// the query params passed as parameter to protect against SQL injection
 		$this->statement->execute($params);
 
 		return $this;

@@ -3,6 +3,7 @@
 require "./functions.php";
 require "./Databse.php";
 require "./ResponseCodes.php";
+require "./routes.php";
 require "./router.php";
 
 $config = require "../ele/config.php";

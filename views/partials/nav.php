@@ -1,8 +1,19 @@
 <style>
 
+nav{
+background-color:lightgrey;
+
+}
+
 li{
 	list-style:none;
 	font-size: 1.9rem;
+	color:grey;
+}
+
+a{
+	color:grey;
+
 }
 
 ul{

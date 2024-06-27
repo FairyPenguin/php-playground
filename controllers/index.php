@@ -17,23 +17,23 @@ $post = ["title" => "post1", "author" => "author of the post"];
 // Assoicative Array
 
 $booksData = [
-	[
-		"id" => 3, "name" => "BOOK_1", "Author" => "unknown",
-	], [
-		"id" => 4, "name" => "BOOK_2", "Author" => "unknown",
-	],
-	[
-		"id" => 5, "name" => "BOOK_3", "Author" => "unknown2",
-	],
-	[
-		"id" => 1, "name" => "BOOK_4", "Author" => "unknown2",
-	],
-	[
-		"id" => 2, "name" => "BOOK_5", "Author" => "unknown3",
-	],
-	[
-		"id" => 3, "name" => "BOOK_6", "Author" => "unknown3",
-	],
+    [
+        "id" => 3, "name" => "BOOK_1", "Author" => "unknown",
+    ], [
+        "id" => 4, "name" => "BOOK_2", "Author" => "unknown",
+    ],
+    [
+        "id" => 5, "name" => "BOOK_3", "Author" => "unknown2",
+    ],
+    [
+        "id" => 1, "name" => "BOOK_4", "Author" => "unknown2",
+    ],
+    [
+        "id" => 2, "name" => "BOOK_5", "Author" => "unknown3",
+    ],
+    [
+        "id" => 3, "name" => "BOOK_6", "Author" => "unknown3",
+    ],
 ];
 
 // function filter($itemsArray, $fn)
