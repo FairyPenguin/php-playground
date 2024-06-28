@@ -1,17 +1,19 @@
 <?php
 
-require "../ele/Validator.php";
+use Core\Database;
 
-$config = require "../ele/config.php";
+// require base_path("Validator.php");
+
+$config = require base_path("config.php");
 
 $db = new Database($config["filePath"]);
+
+$errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 	// code...
 
 	// Input Validation
-
-	$errors = [];
 
 	$noteBodyInputValue = $_POST['body'];
 
@@ -36,4 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 // dd($post);
 
-require "./views/notes/create.view.php";
+view("notes/create.view.php", ["errors" => $errors]);

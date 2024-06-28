@@ -1,6 +1,8 @@
 <?php
 
-require "views/partials/nav.php"
+require "../views/partials/nav.php"
+
+// require view("partials/nav.php");
 ?>
 
 <!DOCTYPE html>

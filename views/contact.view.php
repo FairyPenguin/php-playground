@@ -9,7 +9,7 @@
 <h1>000</h1>
 
 <?php
-require "./views/partials/nav.php"
+require "../views/partials/nav.php"
 ?>
 
 

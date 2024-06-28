@@ -1,7 +1,8 @@
 <?php
 
-// var_dump(get_included_files());
-$config = require "../ele/config.php";
+use Core\Database;
+
+$config = require base_path("config.php");
 
 $db = new Database($config["filePath"]);
 
@@ -24,7 +25,7 @@ authorize($note["user_id"] === $currentUserId);
 // 	abort(ResponseCode::Unauthorized);
 // }
 
-require "./views/notes/show.view.php";
+require base_path("views/notes/show.view.php");
 
 // var_dump(get_defined_vars());
 

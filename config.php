@@ -3,5 +3,5 @@
 // $dataBaseFilePath = "./db/php.db";
 
 return [
-    "filePath" => "./db/php.db",
+	"filePath" => "../db/php.db",
 ];
